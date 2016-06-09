@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS | $http Service</title>
+        <script src="angular.js"></script>
+        <script src="angular-route.min.js"></script>
+        <script src="controller.js"></script>
+    </head>
+    <body ng-app="mainApp">
+        <div ng-controller="AppController">
+            <ul>
+                <h2>Names</h2>
+                <li ng-repeat="person in persons">
+                    {{ person.name }}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

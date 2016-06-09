@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="angular.js"></script>
+        <script type="text/javascript">
+            var myModule = angular.module('myModule', []);
+            myModule.controller("myModuleController", function($scope){
+                $scope.initialName = "ica";
+                $scope.initialEmail = "remarcbalisi@gmail.com";
+                $scope.age = "55";
+                $scope.pattern = /^\d*$/; //for positive number
+            });
+        </script>
+    </head>
+    <body ng-app="myModule">
+        <div ng-controller="myModuleController">
+            <form name="form1">
+                <label>Name:</label>
+                <input type="text" name="name" ng-model="initialName" required="">
+                <span style="color:red" ng-show="form1.name.$error.required">
+                    Please provide your name
+                </span><br>
+                <label>Email:</label>
+                <input type="email" name="email" ng-model="initialEmail" required="">
+                <span style="color:red" ng-show="form1.email.$error.email">
+                    Please provide valid email
+                </span><br>
+                <label>Age:</label>
+                <input name="age" ng-model="age" ng-pattern="pattern">
+                <span style="color:red" ng-show="form1.age.$error.pattern">
+                    Age must be positive
+                </span><br>
+            </form>
+        </div>
+    </body>
+</html>

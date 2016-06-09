@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="angular.js"></script>
+    </head>
+    <body>
+        <div>
+            <input type="text" ng-init="x=0" ng-keyup="x=x+1">{{x}}
+            <br>
+            <input type="text" ng-init="y=0" ng-keydown="y=y+1">{{y}}
+            <br>
+            <input type="checkbox" ng-model="check">
+            <textarea ng-disabled="check"></textarea>
+        </div>
+    </body>
+</html>
