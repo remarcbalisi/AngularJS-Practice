@@ -10,21 +10,59 @@
             price: 2.95,
             description:'this is description',
             canPurchase: true,
-            soldOut:false
+            soldOut:false,
+            reviews: [
+                {
+                    stars: 5,
+                    body: "I love this product",
+                    author: "remarcbalisi"
+                },
+                {
+                    stars: 5,
+                    body: "this product is simply amazing",
+                    author: "remarcbalisi"
+                },
+            ],
         },
         {
             name: 'this is name 2',
             price: 2.95,
             description:'this is description 2',
             canPurchase: true,
-            soldOut:false
+            soldOut:false,
+            reviews: [
+                {
+                    stars: 1,
+                    body: "this product sucks!",
+                    author: "remarcbalisi"
+                },
+                {
+                    stars: 1,
+                    body: "this product is not cool!",
+                    author: "remarcbalisi"
+                },
+            ],
         }
     ];
 
     app.controller('PanelController', function(){
         this.tab = 1;
 
-        this.selectTab = 
+        this.selectTab = function(setTab){
+            this.tab = setTab;
+        }
+        this.isSelected = function(selectedTab){
+            return this.tab === selectedTab;
+        }
+    });
+
+    app.controller('ReviewController', function(){
+        this.review = {};
+
+        this.addReview = function(product){
+            product.reviews.push(this.review);
+            this.review = {};
+        };
     });
 
 })();
